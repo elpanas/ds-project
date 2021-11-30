@@ -7,7 +7,7 @@ stages:
 build:
   script:
     - npm install
-  environments: 
+  environment: 
     - NODE_ENV=test
 
 build:
