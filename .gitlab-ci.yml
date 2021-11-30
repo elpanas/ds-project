@@ -1,14 +1,30 @@
-image: node:latest
+image: node:16
 
-cache:
-  paths:
-    - node_modules/
+stages:
+  - npm
+  - test
 
 build_job:
   script:
     - npm install
-    - node ./specs/start.js ./specs/async.spec.js
 
-test_job:
+npm:
+  stage: npm
+  script:
+    - npm config set registry ${CI_NPM_REGISTRY}
+    - npm install
+  cache:
+    paths:
+      - node_modules/
+  artifacts:
+    expire_in: 1 days
+    when: on_success
+    paths:
+      - node_modules/
+
+test:
+  stage: test
+  dependencies:
+    - npm
   script:
     - npm test
