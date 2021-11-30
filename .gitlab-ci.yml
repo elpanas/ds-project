@@ -5,14 +5,10 @@ stages:
   - test
 
 build:
-  script:
-    - npm install
-    - npm i -g jest
-
-build:
   stage: build
   script:
     - npm install
+    - npm i -g jest
   cache:
     paths:
       - node_modules/
