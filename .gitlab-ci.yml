@@ -19,6 +19,6 @@ build:
 test:
   stage: test
   dependencies:
-    - npm
+    - build
   script:
     - npm test
