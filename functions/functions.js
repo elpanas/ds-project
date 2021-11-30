@@ -24,7 +24,6 @@ function jsonResultManagement(res, result) {
   } else {
     return res.status(400).send();
   }
-  // return 0;
 }
 
 // eslint-disable-next-line consistent-return
@@ -36,7 +35,6 @@ function resultManagement(res, result) {
   } else {
     return res.status(400).send();
   }
-  // return 0;
 }
 
 module.exports = {

@@ -1,24 +1,18 @@
 image: node:16
 
 stages:
-  - npm
+  - build
   - test
 
-build_job:
+build:
   script:
     - npm install
 
-npm:
-  stage: npm
+build:
+  stage: build
   script:
-    - npm config set registry ${CI_NPM_REGISTRY}
     - npm install
   cache:
-    paths:
-      - node_modules/
-  artifacts:
-    expire_in: 1 days
-    when: on_success
     paths:
       - node_modules/
 
