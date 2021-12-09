@@ -8,6 +8,7 @@ build:
   stage: build
   script:
     - npm install
+    - npm install jest --global
   cache:
     paths:
       - node_modules/
