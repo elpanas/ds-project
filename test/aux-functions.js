@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 const faker = require('faker/locale/it');
 // TEST FUNCTIONS
 function generateCoordinates() {

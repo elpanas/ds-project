@@ -81,7 +81,7 @@ async function execDelete() {
 
 describe('/', () => {
   it('should return 200 status code and welcome message', async () => {
-    const res = await request(server).get(`/`);
+    const res = await request(server).get('/');
     expect(res.statusCode).toBe(200);
     expect('BeachU Web Service');
   });

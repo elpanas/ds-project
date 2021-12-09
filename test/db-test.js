@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 const mongoose = require('mongoose');
 const redisMongoose = require('redis_mongoose');
 const { MongoMemoryServer } = require('mongodb-memory-server');

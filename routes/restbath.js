@@ -1,27 +1,27 @@
 const router = require('express').Router();
-const authManagement = require('../middleware/auth');
-const BathController = require('../controllers/bathController');
+const authManagement = require('../middleware/authware');
+const bathController = require('../controllers/bathController');
 
 // CREATE
-router.post('/', authManagement, BathController.postBath);
+router.post('/', authManagement, bathController.postBath);
 // --------------------------------------------------------------------
 
 // READ
-router.get('/disp/coord/:lat/:long', BathController.getBathCoord);
-router.get('/bath/:id', BathController.getSingleBath);
-router.get('/gest/:id', authManagement, BathController.getGest);
+router.get('/disp/coord/:lat/:long', bathController.getBathCoord);
+router.get('/bath/:id', bathController.getSingleBath);
+router.get('/gest/:id', authManagement, bathController.getGest);
 // --------------------------------------------------------------------
 
 // UPDATE umbrellas
-router.patch('/:id', authManagement, BathController.patchBath);
+router.patch('/:id', authManagement, bathController.patchBath);
 // --------------------------------------------------------------------
 
 // UPDATE whole bath
-router.put('/:id', authManagement, BathController.putBath);
+router.put('/:id', authManagement, bathController.putBath);
 // --------------------------------------------------------------------
 
 // DELETE
-router.delete('/:id', authManagement, BathController.deleteBath);
+router.delete('/:id', authManagement, bathController.deleteBath);
 // --------------------------------------------------------------------
 
 module.exports = router;

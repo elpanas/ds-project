@@ -1,6 +1,6 @@
 const { clearCache } = require('redis_mongoose');
 const Objectid = require('mongoose').Types.ObjectId;
-const { Bath } = require('../models/bath');
+const { Bath } = require('../models/bathmodel');
 const {
   redis: { time },
 } = require('../config/config');

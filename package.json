@@ -14,7 +14,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node server.js",
-    "test": "jest -- --updateSnapshot --verbose --coverage --forceExit"
+    "test": "jest --ci --runInBand --forceExit --watchAll=false"
   },
   "dependencies": {
     "compression": "^1.7.4",
