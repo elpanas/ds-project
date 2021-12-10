@@ -25,4 +25,6 @@
 **/.coverage
 .eslintrc.js
 .prettierrc.js
+.gitlab-ci.yml
+LICENCE
 README.md

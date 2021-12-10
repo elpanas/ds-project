@@ -44,8 +44,8 @@ module.exports = {
   },
 
   // RETURN A MANAGER'S BATHS LIST
-  getBathGest: async (uid) =>
-    Bath.find({ uid }).sort({ name: 1 }).lean().cache(cacheOptions),
+  getBathGest: async (userId) =>
+    Bath.find({ uid: userId }).sort({ name: 1 }).lean().cache(cacheOptions),
 
   // UPDATE BATH INFO
   updateBath: async (bid, bathData) => {
