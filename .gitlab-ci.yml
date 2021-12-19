@@ -8,7 +8,6 @@ build:
   stage: build
   script:
     - npm ci
-    - npm i --save supertest
   cache:
     paths:
       - node_modules/
