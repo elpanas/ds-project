@@ -6,7 +6,7 @@ const {
 } = require('../config/config');
 
 module.exports = (req, res, next) => {
-  if (req.get('Authorization') !== `Bearer ${auth}`)
+  if (req.get('Authorization') !== auth)
     return res.status(401).setHeader(headerType, headerMessage).send();
 
   next();

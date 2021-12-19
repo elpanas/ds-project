@@ -10,7 +10,7 @@ const mongoDb = process.env.MONGO_DB;
 const config = {
   app: {
     port: process.env.WEB_SERVICE_PORT || 3000,
-    auth: process.env.HASH_AUTH,
+    auth: `Bearer ${process.env.HASH_AUTH}`,
   },
   db: {
     uri: `mongodb://${mongoHost}:${mongoPort1},${mongoHost}:${mongoPort2},${mongoHost}:${mongoPort3}/${mongoDb}?replicaSet=beachu_set`,

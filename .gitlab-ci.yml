@@ -7,8 +7,7 @@ stages:
 build:
   stage: build
   script:
-    - npm install
-    - npm install jest --global
+    - npm ci
   cache:
     paths:
       - node_modules/
@@ -18,4 +17,4 @@ test:
   dependencies:
     - build
   script:
-    - npm test
+    - npx jest --ci --runInBand --forceExit --watchAll=false
