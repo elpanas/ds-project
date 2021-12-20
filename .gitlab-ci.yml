@@ -8,11 +8,10 @@ build:
   stage: build
   script:
     - cd backend/
-    - npm config get production
     - npm config set -g production false
     - npm ci
+    - npm install jest --save-dev
     - npm install supertest --save-dev
-    - npm install --save-dev jest
   cache:
     paths:
       - node_modules/
@@ -23,4 +22,4 @@ test:
     - build
   script:
     - cd backend/
-    - npm test
+    - npx jest --ci --runInBand --forceExit --watchAll=false
