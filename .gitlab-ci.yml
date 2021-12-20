@@ -7,6 +7,7 @@ stages:
 build:
   stage: build
   script:
+    - cd backend/
     - npm config set -g production false
     - npm ci
     - npm install supertest --save-dev
