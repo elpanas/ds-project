@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "515250828518",
+    "project_id": "beachu-3cd40",
+    "storage_bucket": "beachu-3cd40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515250828518:android:4f198f4267fa55698d7727",
+        "android_client_info": {
+          "package_name": "com.lucapanariello.beachu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515250828518-jn2kmbm2a7j02u93mhl3vb6b58vaui4f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lucapanariello.beachu",
+            "certificate_hash": "5fc205f9f32809ae419b4cab1eac86eb766f3019"
+          }
+        },
+        {
+          "client_id": "515250828518-rpou9ju07evu44f9kr53ja49cqjg419t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyrV_PrzNrB0hroTD2GZIbV7UBnIPNDLI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "515250828518-rpou9ju07evu44f9kr53ja49cqjg419t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
