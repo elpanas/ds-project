@@ -22,4 +22,5 @@ test:
   dependencies:
     - build
   script:
+    - cd backend/
     - npm test
