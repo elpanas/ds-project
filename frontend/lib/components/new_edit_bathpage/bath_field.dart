@@ -1,6 +1,15 @@
-import 'package:beachu/constants.dart';
-import 'package:beachu/functions.dart';
-import 'package:flutter/material.dart';
+import 'package:beachu/constants.dart' show kBathOpacTextStyle;
+import 'package:beachu/functions.dart' show validatorCallback;
+import 'package:flutter/material.dart'
+    show
+        BuildContext,
+        Flexible,
+        InputDecoration,
+        StatelessWidget,
+        TextEditingController,
+        TextFormField,
+        TextInputType,
+        Widget;
 
 class BathField extends StatelessWidget {
   // ignore: use_key_in_widget_constructors

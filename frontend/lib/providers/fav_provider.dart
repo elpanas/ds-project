@@ -1,6 +1,6 @@
 import 'package:beachu/models/hive_model.dart';
 import 'package:beachu/providers/bath_provider.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/cupertino.dart' show ChangeNotifier;
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:easy_localization/easy_localization.dart';
 

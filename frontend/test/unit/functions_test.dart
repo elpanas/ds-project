@@ -1,5 +1,5 @@
-import 'package:beachu/functions.dart';
-import 'package:flutter_test/flutter_test.dart';
+import 'package:beachu/functions.dart' show validatorCallback;
+import 'package:flutter_test/flutter_test.dart' show expect, isNull, test;
 // import 'package:geolocator/geolocator.dart';
 
 void main() {

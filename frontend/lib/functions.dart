@@ -1,4 +1,5 @@
-import 'package:geolocator/geolocator.dart';
+import 'package:geolocator/geolocator.dart'
+    show Geolocator, LocationAccuracy, LocationPermission, Position;
 
 // TEXTFIELD VALIDATION
 String? validatorCallback(value) {

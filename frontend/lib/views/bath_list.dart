@@ -1,10 +1,11 @@
 import 'package:beachu/components/action_button.dart';
+import 'package:beachu/components/add_button.dart';
 import 'package:beachu/components/bathlistpage/bath_alert.dart';
 import 'package:beachu/components/bathlistpage/bath_card.dart';
 import 'package:beachu/components/message.dart';
 import 'package:beachu/components/snackbar.dart';
-import 'package:beachu/components/add_button.dart';
-import 'package:beachu/constants.dart';
+import 'package:beachu/constants.dart'
+    show circleProgressColor, kAppBarTextStyle, kTitleListStyle;
 import 'package:beachu/models/bath_index.dart';
 import 'package:beachu/models/bath_model.dart';
 import 'package:beachu/providers/bath_provider.dart';
@@ -12,11 +13,27 @@ import 'package:beachu/providers/fav_provider.dart';
 import 'package:beachu/providers/http_provider.dart';
 import 'package:beachu/views/bath_page.dart';
 import 'package:beachu/views/fav_list.dart';
-import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart'
+    show
+        AppBar,
+        BuildContext,
+        Column,
+        Expanded,
+        Icons,
+        ListView,
+        Navigator,
+        Scaffold,
+        ScaffoldMessenger,
+        SizedBox,
+        StatelessWidget,
+        Text,
+        UniqueKey,
+        Widget,
+        showDialog;
+import 'package:http/http.dart' as http;
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:provider/provider.dart';
-import 'package:easy_localization/easy_localization.dart';
-import 'package:http/http.dart' as http;
 
 // ignore: use_key_in_widget_constructors
 class BathListPage extends StatelessWidget {

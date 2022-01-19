@@ -1,4 +1,13 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'
+    show
+        AlertDialog,
+        BuildContext,
+        Navigator,
+        StatelessWidget,
+        Text,
+        TextButton,
+        VoidCallback,
+        Widget;
 import 'package:easy_localization/easy_localization.dart';
 
 class DeleteAlert extends StatelessWidget {

@@ -1,6 +1,7 @@
-import 'dart:convert';
-import 'dart:io';
-import 'package:beachu/constants.dart';
+import 'dart:convert' show jsonEncode;
+import 'dart:io' show GZipCodec, HttpHeaders;
+
+import 'package:beachu/constants.dart' show hashAuth, url;
 import 'package:beachu/models/bath_model.dart';
 import 'package:beachu/models/hive_model.dart';
 import 'package:beachu/providers/bath_provider.dart';
@@ -9,9 +10,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:mockito/annotations.dart';
-import 'package:mockito/mockito.dart';
 import 'package:http/http.dart' as http;
+import 'package:mockito/annotations.dart' show GenerateMocks;
+import 'package:mockito/mockito.dart' show when;
 
 import 'http_provider_test.mocks.dart';
 

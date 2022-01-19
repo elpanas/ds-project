@@ -1,5 +1,13 @@
-import 'package:beachu/constants.dart';
-import 'package:flutter/material.dart';
+import 'package:beachu/constants.dart' show kLogInOutButtonStyle;
+import 'package:flutter/material.dart'
+    show
+        BuildContext,
+        Icon,
+        Icons,
+        OutlinedButton,
+        StatelessWidget,
+        VoidCallback,
+        Widget;
 
 class LogoutButton extends StatelessWidget {
   // ignore: use_key_in_widget_constructors

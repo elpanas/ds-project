@@ -1,5 +1,20 @@
-import 'package:beachu/constants.dart';
-import 'package:flutter/material.dart';
+import 'package:beachu/constants.dart'
+    show kBathCardLeadingIcon, kBathCardMargin;
+import 'package:flutter/material.dart'
+    show
+        BuildContext,
+        Card,
+        Icon,
+        Icons,
+        ListTile,
+        Row,
+        SizedBox,
+        StatelessWidget,
+        Text,
+        TextStyle,
+        UniqueKey,
+        VoidCallback,
+        Widget;
 
 class BathCard extends StatelessWidget {
   const BathCard({

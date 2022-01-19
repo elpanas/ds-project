@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/cupertino.dart' show ChangeNotifier;
 import 'package:hive/hive.dart';
 
 class Bath extends ChangeNotifier {

@@ -1,8 +1,8 @@
 import 'package:beachu/models/bath_model.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/cupertino.dart' show ChangeNotifier;
 import 'package:maps_launcher/maps_launcher.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher.dart' show canLaunch, launch;
 
 class BathProvider extends ChangeNotifier {
   List<Bath> _bathList = [];

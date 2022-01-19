@@ -1,12 +1,31 @@
-import 'package:beachu/components/snackbar.dart';
 import 'package:beachu/components/simple_button.dart';
-import 'package:beachu/constants.dart';
+import 'package:beachu/components/snackbar.dart';
+import 'package:beachu/constants.dart'
+    show kBathOpacTextStyle, paddingEdgeValues;
 import 'package:beachu/providers/fire_provider.dart';
 import 'package:beachu/providers/http_provider.dart';
 import 'package:beachu/views/bath_list.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart'
+    show
+        BuildContext,
+        Center,
+        Column,
+        InputDecoration,
+        MainAxisAlignment,
+        Navigator,
+        Padding,
+        Scaffold,
+        ScaffoldMessenger,
+        SingleChildScrollView,
+        SizedBox,
+        State,
+        StatefulWidget,
+        TextEditingController,
+        TextField,
+        TextInputType,
+        Widget;
+import 'package:provider/provider.dart';
 
 // ignore: use_key_in_widget_constructors
 class LoginPage extends StatefulWidget {

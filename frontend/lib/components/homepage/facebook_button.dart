@@ -1,5 +1,13 @@
-import 'package:beachu/constants.dart';
-import 'package:flutter/material.dart';
+import 'package:beachu/constants.dart' show kFacebookButtonStyle;
+import 'package:flutter/material.dart'
+    show
+        BuildContext,
+        Expanded,
+        Icon,
+        OutlinedButton,
+        StatelessWidget,
+        VoidCallback,
+        Widget;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class FacebookButton extends StatelessWidget {

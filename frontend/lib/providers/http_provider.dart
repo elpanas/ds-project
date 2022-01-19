@@ -1,14 +1,14 @@
-import 'dart:convert';
-import 'dart:io';
+import 'dart:convert' show jsonDecode, jsonEncode;
+import 'dart:io' show GZipCodec, HttpHeaders;
 
-import 'package:beachu/constants.dart';
-import 'package:beachu/functions.dart';
+import 'package:beachu/constants.dart' show hashAuth, url;
+import 'package:beachu/functions.dart' show getPosition;
 import 'package:beachu/models/bath_model.dart';
 import 'package:beachu/providers/bath_provider.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:http/http.dart' as http;
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/cupertino.dart' show ChangeNotifier;
+import 'package:geolocator/geolocator.dart' show Position;
+import 'package:http/http.dart' as http;
 
 class HttpProvider extends ChangeNotifier {
   HttpProvider(this._bathP);

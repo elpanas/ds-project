@@ -1,5 +1,6 @@
-import 'package:beachu/constants.dart';
-import 'package:flutter/material.dart';
+import 'package:beachu/constants.dart' show kMessageStyle;
+import 'package:flutter/material.dart'
+    show BuildContext, Center, StatelessWidget, Text, Widget;
 
 class Message extends StatelessWidget {
   // ignore: use_key_in_widget_constructors

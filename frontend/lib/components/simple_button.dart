@@ -1,5 +1,12 @@
-import 'package:beachu/constants.dart';
-import 'package:flutter/material.dart';
+import 'package:beachu/constants.dart' show kSimpleButtonStyle;
+import 'package:flutter/material.dart'
+    show
+        BuildContext,
+        ElevatedButton,
+        StatelessWidget,
+        Text,
+        VoidCallback,
+        Widget;
 
 class SimpleButton extends StatelessWidget {
   // ignore: use_key_in_widget_constructors

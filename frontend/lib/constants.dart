@@ -1,5 +1,23 @@
 // coverage:ignore-file
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'
+    show
+        AppBarTheme,
+        BorderRadius,
+        BoxDecoration,
+        BoxShadow,
+        ButtonStyle,
+        CircularProgressIndicator,
+        Color,
+        EdgeInsets,
+        FontWeight,
+        Icon,
+        Icons,
+        Locale,
+        MaterialStateProperty,
+        RoundedRectangleBorder,
+        Size,
+        TextStyle,
+        ThemeData;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:sizer/sizer.dart';
 

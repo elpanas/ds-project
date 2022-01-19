@@ -1,5 +1,6 @@
-import 'package:beachu/constants.dart';
-import 'package:flutter/material.dart';
+import 'package:beachu/constants.dart'
+    show kSnackBarTextStyle, kSnackbarPadding;
+import 'package:flutter/material.dart' show Color, SnackBar, Text;
 
 SnackBar snackBarBuilder({required String title}) {
   return SnackBar(

@@ -1,5 +1,6 @@
-import 'package:beachu/constants.dart';
-import 'package:flutter/material.dart';
+import 'package:beachu/constants.dart' show kBathMargin, kBathTextStyle;
+import 'package:flutter/material.dart'
+    show Alignment, BuildContext, Container, StatelessWidget, Text, Widget;
 import 'package:easy_localization/easy_localization.dart';
 
 // ignore: use_key_in_widget_constructors

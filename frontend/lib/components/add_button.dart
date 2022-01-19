@@ -1,5 +1,14 @@
 import 'package:beachu/views/new_bath.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'
+    show
+        BuildContext,
+        Color,
+        FloatingActionButton,
+        Icon,
+        Icons,
+        Navigator,
+        StatelessWidget,
+        Widget;
 
 // ignore: use_key_in_widget_constructors
 class FloatingAdd extends StatelessWidget {

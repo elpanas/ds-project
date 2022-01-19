@@ -1,4 +1,4 @@
-import 'package:beachu/constants.dart';
+import 'package:beachu/constants.dart' show kDarkTheme, kListLocales;
 import 'package:beachu/models/hive_model.dart';
 import 'package:beachu/providers/bath_provider.dart';
 import 'package:beachu/providers/fav_provider.dart';
@@ -14,9 +14,17 @@ import 'package:beachu/views/new_bath.dart';
 import 'package:beachu/views/registration.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'
+    show
+        BuildContext,
+        MaterialApp,
+        StatelessWidget,
+        Widget,
+        WidgetsFlutterBinding,
+        runApp;
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:provider/provider.dart';
+import 'package:provider/provider.dart'
+    show ChangeNotifierProvider, ChangeNotifierProxyProvider, MultiProvider;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:sizer/sizer.dart';
 

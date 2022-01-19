@@ -3,19 +3,37 @@ import 'package:beachu/components/bathpage/bath_container.dart';
 import 'package:beachu/components/bathpage/bath_subtitle.dart';
 import 'package:beachu/components/bathpage/bath_title.dart';
 import 'package:beachu/components/bathpage/umbrella_button.dart';
-import 'package:beachu/components/snackbar.dart';
 import 'package:beachu/components/simple_button.dart';
-import 'package:beachu/constants.dart';
+import 'package:beachu/components/snackbar.dart';
+import 'package:beachu/constants.dart' show circleProgressColor;
 import 'package:beachu/models/bath_index.dart';
 import 'package:beachu/models/bath_model.dart';
 import 'package:beachu/providers/bath_provider.dart';
 import 'package:beachu/providers/fav_provider.dart';
 import 'package:beachu/providers/http_provider.dart';
 import 'package:beachu/views/edit_bath.dart';
-import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart'
+    show
+        AppBar,
+        BuildContext,
+        Color,
+        Column,
+        Icons,
+        MainAxisAlignment,
+        ModalRoute,
+        Navigator,
+        Row,
+        Scaffold,
+        ScaffoldMessenger,
+        SingleChildScrollView,
+        SizedBox,
+        StatelessWidget,
+        UniqueKey,
+        Widget,
+        WillPopScope;
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:provider/provider.dart';
-import 'package:easy_localization/easy_localization.dart';
 
 // ignore: use_key_in_widget_constructors
 class BathPage extends StatelessWidget {
