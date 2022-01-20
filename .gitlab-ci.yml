@@ -9,5 +9,4 @@ test:
     - cd backend/
     - npm config set -g production false
     - npm ci
-    - npm install supertest --save-dev
-    - npx jest --ci --runInBand --forceExit --watchAll=false
+    - npm test
