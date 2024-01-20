@@ -16,7 +16,7 @@ services:
 
   # BEACHU WEBSERVICE
   webservice:
-    image: lucapanariello/beachu
+    image: beachu
     env_file: .env
     environment:
       #NODE_ENV: production
