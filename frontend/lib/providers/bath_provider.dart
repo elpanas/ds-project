@@ -2,7 +2,7 @@ import 'package:beachu/models/bath_model.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart' show ChangeNotifier;
 import 'package:maps_launcher/maps_launcher.dart';
-import 'package:url_launcher/url_launcher.dart' show canLaunch, launch;
+import 'package:url_launcher/url_launcher.dart' show canLaunchUrl, launchUrl;
 
 class BathProvider extends ChangeNotifier {
   List<Bath> _bathList = [];
@@ -56,19 +56,29 @@ class BathProvider extends ChangeNotifier {
 
   // coverage:ignore-start
   callNumber(int index) async {
-    await canLaunch('tel:${_bathList[index].phone}')
-        ? launch('tel:${_bathList[index].phone}')
+    await canLaunchUrl(Uri.parse('tel:${_bathList[index].phone}'))
+        ? launchUrl(Uri.parse('tel:${_bathList[index].phone}'))
         : throw 'Could not launch';
   }
 
   openMap(int index) async {
-    await MapsLauncher.launchCoordinates(
-      _bathList[index].latitude,
-      _bathList[index].longitude,
-      _bathList[index].name,
-    );
+    final lat = _bathList[index].latitude;
+    final lng = _bathList[index].longitude;
+    final label = _bathList[index].name;
+    final geoUrl =
+        Uri.parse(Uri.encodeFull('geo:$lat,$lng?q=$lat,$lng($label)'));
+    final fallbackUrl =
+        Uri.parse(Uri.encodeFull('https://maps.google.com/?q=$lat,$lng'));
+
+    if (await canLaunchUrl(geoUrl)) {
+      await MapsLauncher.launchCoordinates(lat, lng, label);
+    } else if (await canLaunchUrl(fallbackUrl)) {
+      await launchUrl(fallbackUrl);
+    } else {
+      print('Nessuna app o browser disponibile per aprire la mappa.');
+      // Qui puoi anche mostrare un messaggio all'utente con un dialog o snackbar
+    }
   }
   // coverage:ignore-end
   // ---------------------------------------------------------
-
 }
