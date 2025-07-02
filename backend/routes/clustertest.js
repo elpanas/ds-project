@@ -2,8 +2,7 @@
 /* eslint-disable no-plusplus */
 const router = require('express').Router();
 
-// It was designed to be blocking and CPU-intensive in order to observe
-// how it would affect a cluster afterwards
+// Stress test per la CPU per verificare la capacità con/senza clustering
 router.get('/', (req, res) => {
   const base = 8;
   let result = 0;
