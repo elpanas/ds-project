@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:beachu/models/bath_model.dart';
 import 'package:beachu/models/hive_model.dart';
 import 'package:beachu/providers/bath_provider.dart';
@@ -6,13 +8,16 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   TestWidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences.setMockInitialValues({});
   await EasyLocalization.ensureInitialized();
   await dotenv.load(fileName: "../../.env");
   Hive.registerAdapter(LocalBathAdapter());
-  await Hive.initFlutter();
+  final testDir = await Directory.systemTemp.createTemp();
+  Hive.init(testDir.path);
   await Hive.deleteBoxFromDisk('favourites');
   await Hive.openBox('favourites');
   BathProvider bathP = BathProvider();

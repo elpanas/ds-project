@@ -3,11 +3,14 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:beachu/providers/bath_provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   TestWidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences.setMockInitialValues({});
   await EasyLocalization.ensureInitialized();
   await dotenv.load(fileName: "../../.env");
+
   BathProvider bathP = BathProvider();
 
   Bath bath = Bath(

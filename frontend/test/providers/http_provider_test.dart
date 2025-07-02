@@ -1,5 +1,5 @@
 import 'dart:convert' show jsonEncode;
-import 'dart:io' show GZipCodec, HttpHeaders;
+import 'dart:io' show Directory, GZipCodec, HttpHeaders;
 
 import 'package:beachu/constants.dart' show hashAuth, url;
 import 'package:beachu/models/bath_model.dart';
@@ -13,16 +13,19 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:http/http.dart' as http;
 import 'package:mockito/annotations.dart' show GenerateMocks;
 import 'package:mockito/mockito.dart' show when;
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'http_provider_test.mocks.dart';
 
 @GenerateMocks([http.Client])
 void main() async {
   TestWidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences.setMockInitialValues({});
   await EasyLocalization.ensureInitialized();
   await dotenv.load(fileName: "../../.env");
   Hive.registerAdapter(LocalBathAdapter());
-  await Hive.initFlutter();
+  final testDir = await Directory.systemTemp.createTemp();
+  Hive.init(testDir.path);
   await Hive.deleteBoxFromDisk('favourites');
   await Hive.openBox('favourites');
   BathProvider bathP = BathProvider();
