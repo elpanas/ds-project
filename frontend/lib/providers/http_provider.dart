@@ -31,12 +31,13 @@ class HttpProvider extends ChangeNotifier {
   final BathProvider? _bathP;
 
   bool _loading = false, _result = false;
-  final _headersZip = {
+  final Map<String, String> _headersZip = {
     HttpHeaders.contentEncodingHeader: 'gzip',
     HttpHeaders.contentTypeHeader: 'application/json',
     HttpHeaders.authorizationHeader: 'Bearer $hashAuth',
   };
-  final _header = {
+
+  final header = {
     HttpHeaders.authorizationHeader: 'Bearer $hashAuth',
   };
 
@@ -52,10 +53,11 @@ class HttpProvider extends ChangeNotifier {
     loading = true;
     _bathP!.message = 'loading'.tr();
     _result = false;
+
     try {
       final res = (_bathP!.userId == '')
           ? await client.get(Uri.parse(url))
-          : await client.get(Uri.parse(url), headers: _header);
+          : await client.get(Uri.parse(url), headers: header);
       if (res.statusCode == 200) {
         final resJson = jsonDecode(res.body);
         _bathP!.bath =
@@ -230,7 +232,7 @@ class HttpProvider extends ChangeNotifier {
     try {
       final res = await client.delete(
         Uri.parse('$url$bid'),
-        headers: _header,
+        headers: header,
       );
 
       if (res.statusCode == 200) {
