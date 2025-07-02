@@ -2,11 +2,12 @@ buildscript {
     ext.kotlin_version = '1.7.10'
     repositories {
         google()
+         mavenCentral()  // aggiunto
         jcenter()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.1'
+        classpath 'com.android.tools.build:gradle:7.3.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'com.google.gms:google-services:4.3.8'
     }
@@ -15,7 +16,16 @@ buildscript {
 allprojects {
     repositories {
         google()
+        mavenCentral()  // aggiunto
         jcenter()
+    }
+
+    configurations.all {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            if (details.requested.group == 'org.bouncycastle') {
+                details.useVersion '1.70' // 👈 Forziamo una versione compatibile con Java 8/11
+            }
+        }
     }
 }
 
