@@ -18,8 +18,8 @@ class RegistrationButton extends StatelessWidget {
     return Expanded(
       child: OutlinedButton(
         onPressed: () => Navigator.pushNamed(context, RegistrationPage.id),
-        child: const Icon(Icons.how_to_reg_outlined),
         style: kLogInOutButtonStyle,
+        child: const Icon(Icons.how_to_reg_outlined),
       ),
     );
   }

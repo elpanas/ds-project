@@ -21,8 +21,8 @@ class SimpleButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
-      child: Text(title),
       style: kSimpleButtonStyle,
+      child: Text(title),
     );
   }
 }

@@ -24,6 +24,7 @@ class ActionIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
+      onPressed: onPressed,
       child: Padding(
         padding: const EdgeInsets.only(right: 10.0),
         child: Icon(
@@ -31,7 +32,6 @@ class ActionIconButton extends StatelessWidget {
           color: const Color(0xFFFF9800),
         ),
       ),
-      onPressed: onPressed,
     );
   }
 }

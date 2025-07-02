@@ -16,9 +16,9 @@ class LogoutButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
-      child: const Icon(Icons.logout),
       style: kLogInOutButtonStyle,
       onPressed: onPressed,
+      child: const Icon(Icons.logout),
     );
   }
 }

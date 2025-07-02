@@ -19,9 +19,9 @@ class GoogleButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: OutlinedButton(
-        child: const Icon(FontAwesomeIcons.google),
         style: kGoogleButtonStyle,
         onPressed: onPressed,
+        child: const Icon(FontAwesomeIcons.google),
       ),
     );
   }

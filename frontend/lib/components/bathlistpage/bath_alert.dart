@@ -25,8 +25,8 @@ class DeleteAlert extends StatelessWidget {
           onPressed: () => Navigator.of(context).pop(),
         ),
         TextButton(
-          child: const Text('alert_confirm').tr(),
           onPressed: onPressed,
+          child: const Text('alert_confirm').tr(),
         ),
       ],
     );

@@ -19,9 +19,9 @@ class FacebookButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: OutlinedButton(
-        child: const Icon(FontAwesomeIcons.facebook),
         style: kFacebookButtonStyle,
         onPressed: () {},
+        child: const Icon(FontAwesomeIcons.facebook),
       ),
     );
   }
