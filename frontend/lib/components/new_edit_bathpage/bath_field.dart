@@ -17,21 +17,15 @@ class BathField extends StatelessWidget {
     required this.controller,
     this.inputType,
     required this.labelText,
-    this.initialValue,
   });
 
   final TextEditingController controller;
   final TextInputType? inputType;
   final String labelText;
-  final String? initialValue;
 
-  void checkAndSetInitialValue() {
-    if (initialValue != null) controller.text = initialValue!;
-  }
 
   @override
   Widget build(BuildContext context) {
-    checkAndSetInitialValue();
     return Flexible(
       child: TextFormField(
         controller: controller,

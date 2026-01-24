@@ -39,6 +39,25 @@ class _EditBathState extends State<EditBath> {
   }
 
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final args =
+          ModalRoute.of(context)!.settings.arguments as BathIndex;
+      final bath =
+          context.read<BathProvider>().bath[args.index];
+
+      _nameController.text = bath.name;
+      _avUmbrellasController.text = bath.avUmbrellas.toString();
+      _totUmbrellasController.text = bath.totUmbrellas.toString();
+      _phoneController.text = bath.phone;
+      _cityController.text = bath.city;
+      _provinceController.text = bath.province;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     final args = ModalRoute.of(context)!.settings.arguments as BathIndex;
     final bathP = context.read<BathProvider>();
@@ -68,7 +87,6 @@ class _EditBathState extends State<EditBath> {
                     const SizedBox(height: 20.0),
                     BathField(
                       controller: _nameController,
-                      initialValue: bath.name,
                       labelText: 'bath_name'.tr(),
                     ),
                     const SizedBox(height: 10.0),
@@ -77,14 +95,12 @@ class _EditBathState extends State<EditBath> {
                         BathField(
                           controller: _avUmbrellasController,
                           inputType: TextInputType.number,
-                          initialValue: bath.avUmbrellas.toString(),
                           labelText: 'bath_av_input'.tr(),
                         ),
                         const SizedBox(width: 20.0),
                         BathField(
                           controller: _totUmbrellasController,
                           inputType: TextInputType.number,
-                          initialValue: bath.totUmbrellas.toString(),
                           labelText: 'bath_tot'.tr(),
                         ),
                       ],
@@ -92,7 +108,6 @@ class _EditBathState extends State<EditBath> {
                     BathField(
                       controller: _phoneController,
                       inputType: TextInputType.phone,
-                      initialValue: bath.phone,
                       labelText: 'bath_phone'.tr(),
                     ),
                     const SizedBox(height: 10.0),
@@ -100,13 +115,11 @@ class _EditBathState extends State<EditBath> {
                       children: [
                         BathField(
                           controller: _cityController,
-                          initialValue: bath.city,
                           labelText: 'bath_city'.tr(),
                         ),
                         const SizedBox(width: 20.0),
                         BathField(
                           controller: _provinceController,
-                          initialValue: bath.province,
                           labelText: 'bath_province'.tr(),
                         ),
                       ],

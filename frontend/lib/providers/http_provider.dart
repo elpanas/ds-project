@@ -68,7 +68,8 @@ class HttpProvider extends ChangeNotifier {
       }
     } catch (e) {
       _bathP!.message = 'no_baths'.tr();
-      throw Exception(e);
+      // print(e);
+      // throw Exception(e);
     } finally {
       loading = false;
     }
@@ -181,7 +182,7 @@ class HttpProvider extends ChangeNotifier {
     _result = false;
 
     final compressedBody =
-        GZipCodec().encode(jsonEncode(_bathP!.bath).codeUnits);
+        GZipCodec().encode(jsonEncode(value.toJson()).codeUnits);
 
     try {
       if (value.avUmbrellas <= value.totUmbrellas) {
