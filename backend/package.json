@@ -15,7 +15,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "jest --ci --runInBand --forceExit --watchAll=false --coverage",
-    "loadtest1000": "loadtest -n 1000 -c 100 --rps 50 http://localhost:3000/api/clustertest"
+    "loadtest1000": "loadtest -n 1000 -c 100 http://localhost:3000/api/clustertest"
   },
   "dependencies": {
     "compression": "^1.7.4",
