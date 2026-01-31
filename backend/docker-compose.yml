@@ -10,8 +10,7 @@ services:
     
   # REDIS DB
   redis:
-    image: redis
-    
+    image: redis    
 
   # BEACHU WEBSERVICE
   webservice:
@@ -25,7 +24,7 @@ services:
       MONGO_DB: beachudb
       WEB_SERVICE_PORT: 3000
       HASH_AUTH: cef05de33f37405ddcf8f5238d00b1a0ad6965674ff0c22593be057070d77e4e
-      CLUSTERS: "true"
+      CLUSTERS: 'true'
       REDIS_URL: redis://redis
 
     ports:
